@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Pair Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
+    <script src="run.js"></script>
+    <script src="https://kit.fontawesome.com/c8bcc8223b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #col1 {
+            border: none;
+        }
+
+        .color {
+            width: 80%;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .color1,
+        .color2 {
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            max-width: 50%;
+            max-height: 50vh;
+            background: #000000;
+            margin: 10px -3px;
+            border-radius: 20px;
+
+        }
+
+        .btn {
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            color: white;
+            background: #333;
+            margin: 10px auto;
+            min-width: 300px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #222;
+        }
+
+        .btn:disabled {
+            background: #aaa;
+            color: black;
+            cursor: not-allowed;
+        }
+
+        .add {
+            background: #222;
+        }
+
+        .add:hover {
+            background: #111;
+        }
+
+        .fas {
+            margin: 0 10px;
+        }
+
+        .collabel {
+            background: #ffffff;
+            display: block;
+            padding: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="color">
+            <h1>Color Pair Generator</h1>
+            <input type="color" name="color1" id="col1" style="display: none;">
+
+            <div class="color1">
+                <span class="collabel" id="col1label"></span>
+            </div>
+            <div class="color2">
+                <span class="collabel" id="col2label">#000000</span>
+            </div>
+            <br />
+            <button class="btn random"><i class="fas fa-random"></i> Random</button>
+            <button class="btn add"><i class="fas fa-plus"></i> Select Color</button>
+            <!-- <button class="btn next">Predict Color Pair <i class="fas fa-forward"></i></button> -->
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Pair Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/c8bcc8223b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        .color{
+            width: 80%;
+            text-align: center;
+            margin: 10px auto;
+        }
+        .color1,.color2{
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            max-width: 50%;
+            max-height: 50vh;
+            margin: 10px -3px;
+            border-radius: 20px;
+            
+        }
+        .btn{
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            color: white;
+            background: #333;
+            margin: 10px auto;
+            min-width: 300px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #222;
+        }
+
+        .btn:disabled{
+            background: #aaa;
+            color:black;
+            cursor: not-allowed;
+        }
+        .add{
+            background: #222;
+        }
+        .add:hover{
+            background: #111;
+        }
+
+        .fas{
+            margin: 0 10px;
+        }
+        .collabel{
+            background: #ffffff;
+            display: block;
+            padding: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+            width: 60%;
+        }
+        .color-box{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #111;
+        }
+
+        .remove-btn{
+            color:red;
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: top;
+        }
+        #color-list{
+            text-align: center;
+            width: 100%;
+        }
+        ol{
+            list-style-type: none;
+        }
+        #empty-list{
+            opacity: 0.5;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="color">
+            <h1>Color Pair Dataset Generator</h1>
+            <h2>Added <span id="addedCount">0 pairs</span></h2>
+            <div class="color1">
+                <span class="collabel" id="col1label"></span>
+            </div>
+            <div class="color2">
+                <span class="collabel" id="col2label"></span>
+            </div>
+            <br />
+            <button class="btn add"><i class="fas fa-plus"></i> Add</button>
+            <button class="btn next">Generate Random <i class="fas fa-random"></i></button>
+            <br />
+            <button class="btn download" disabled>Export Pairs <i class="fas fa-download"></i></button>
+
+            <button style="display: none;" class="btn train" disabled>Train Model  <i class="fas fa-sync-alt"></i></button><br/>
+            <button style="display: none;" class="btn export" disabled>Export Model <i
+                    class="fas fa-download"></i></button>
+        </div>
+
+        <div id="color-list">
+            <hr style="width: 80%;border: 1px #b1b1b11f solid;">
+            <h2>Added Pairs</h2>
+            <ol id="ol-pairs">
+                
+                <!-- <li>
+                    <div class="color-box colA"></div>
+                    <div class="color-box colB"></div>
+                    <div class="remove-btn" title="Remove Pair"><i class="fas fa-times"></i></div>
+                </li> -->
+            </ol>
+            <div id="empty-list">
+                <div><i class="fas fa-palette fa-7x"></i></div>
+                <br/>
+                <div>Add some colors to see them here!</div>
+            </div>
+          
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+</body>
+</html>
